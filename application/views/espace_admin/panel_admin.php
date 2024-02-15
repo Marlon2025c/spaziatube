@@ -129,7 +129,7 @@
     const ctx = document.getElementById('myChart');
 
     // Faites une requête AJAX pour récupérer les données JSON depuis votre point de terminaison CodeIgniter
-    fetch('/spaziatube/Admin/getUsersChartData')
+    fetch('<?= base_url('Admin/getUsersChartData') ?>')
         .then(response => response.json())
         .then(dataUsers => { // Utilisez le nom de variable dataUsers
 
