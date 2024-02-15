@@ -1,7 +1,7 @@
 <?php
-/* ----------------------------------------
-Function Pour s'avoir si les personnes sont bien connecter
-----------------------------------------*/
+/* ---------------------------------------------------------- */
+/* Function Pour s'avoir si les personnes sont bien connecter */
+/* ---------------------------------------------------------- */
 function IsConnected()
 {
     $CI = get_instance();
@@ -11,9 +11,9 @@ function IsConnected()
         return false;
     }
 }
-/* ----------------------------------------
-Function pour s'avoir si la personne et admin du site
-----------------------------------------*/
+/* ----------------------------------------------------- */
+/* Function pour s'avoir si la personne et admin du site */
+/* ----------------------------------------------------- */
 function IsAdmin()
 {
     $CI = get_instance();
@@ -25,10 +25,10 @@ function IsAdmin()
     }
     /* ----------------------------------------
         Classement des Grade
-        '20' => 'User',
-        '40' => 'VIP',
-        '70' => 'Modo',
-        '100' => 'Admin'
+        '1' => 'User',
+        '2' => 'VIP',
+        '3' => 'Modo',
+        '4' => 'Admin'
     ----------------------------------------*/
 }
 
