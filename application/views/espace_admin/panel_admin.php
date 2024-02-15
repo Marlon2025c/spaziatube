@@ -195,7 +195,7 @@
 <script>
     const ctx1 = document.getElementById('myChart1');
 
-    fetch('/spaziatube/Admin/getVideoChartData')
+    fetch('<?= base_url('Admin/getVideoChartData') ?>')
         .then(response => response.json())
         .then(dataVideo => {
             const totalVideos = dataVideo.totalVideos;
@@ -260,7 +260,7 @@
 <script>
     const ctx2 = document.getElementById('myChart2');
 
-    fetch('/spaziatube/Admin/getCommentaireChartData')
+    fetch('<?= base_url('Admin/getCommentaireChartData') ?>')
         .then(response => response.json())
         .then(commentaireData => {
             const totalCommentaire = commentaireData.totalCommentaire;
@@ -326,7 +326,7 @@
 <script>
     const ctx3 = document.getElementById('myChart3');
 
-    fetch('/spaziatube/Admin/getSignalerChartData')
+    fetch('<?= base_url('Admin/getSignalerChartData') ?>')
         .then(response => response.json())
         .then(DataSignaler => {
             const totalSignaler = DataSignaler.totalSignaler;
@@ -400,7 +400,7 @@
             // Effectuez la requête AJAX pour mettre à jour le grade
             $.ajax({
                 type: 'POST',
-                url: '/spaziatube/Admin/updateUserRole',
+                url: '<?= base_url('Admin/updateUserRole') ?>',
                 data: {
                     user_id: userId,
                     role_id: selectedRoleId

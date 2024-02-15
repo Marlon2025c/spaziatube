@@ -319,7 +319,7 @@ class Users_model extends CI_Model
             'raison_detail' => $raison_detail,
             'raison' => $radiosiganler,
             'date_signale' => $date_upload,
-            'video_id' => $video_id,
+            'id_video' => $video_id,
             'user_id' => $user_id
         );
 

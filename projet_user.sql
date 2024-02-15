@@ -211,7 +211,7 @@ DROP TABLE IF EXISTS `video_signaler`;
 CREATE TABLE IF NOT EXISTS `video_signaler` (
   `id` int NOT NULL AUTO_INCREMENT,
   `user_id` int NOT NULL,
-  `video_id` int NOT NULL,
+  `id_video` int NOT NULL,
   `raison` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `raison_detail` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `date_signale` datetime NOT NULL,
