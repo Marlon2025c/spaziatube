@@ -4,7 +4,7 @@ SpaziaTube est une plateforme web développée avec CodeIgniter 3 qui permet aux
 ## 🚀 Démarrage rapide
 1. Clonez ce dépôt sur votre machine locale :
 	````bash
-	git clone https://github.com/votre-utilisateur/spaziatube.git
+	git clone https://github.com/Marlon2025c/spaziatube.git
 	````
 2. Importez le fichier de base de données projet_user.sql situé dans la racine du projet dans votre système de gestion de base de données préféré (MySQL, PhpMyAdmin, etc.).
 
