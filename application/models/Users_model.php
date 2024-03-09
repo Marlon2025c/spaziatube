@@ -64,7 +64,7 @@ class Users_model extends CI_Model
     /* ------------------------------------------------------------  */
     public function get_user_profile($data)
     {
-        $this->db->select('users.id, users.role_id, users.pseudo, users.profile_fond, roles.role_name');
+        $this->db->select('users.id, users.role_id, users.pseudo, users.profile_fond, users.profile_image, roles.role_name');
         $this->db->from('users');
         $this->db->where($data);
         $this->db->join('roles', 'users.role_id = roles.role_id', 'left');

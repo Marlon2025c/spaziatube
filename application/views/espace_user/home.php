@@ -2,7 +2,7 @@
     <div class="row">
         <?php foreach ($videos as $video) : ?>
             <div class="col-md-4">
-                <div class="card mb-3">
+                <div class="card mb-3" style="min-height: 315px;">
                     <a href="<?= base_url('Media/video/' . $video['video_lien']); ?>" onclick="incrementViews(<?= $video['id_video'] ?>)">
                         <img class="card-img-top custom-card-image" src="/spaziatube/uploads/video/<?= $video['user_id']; ?>/bannier/<?= $video['video_bannier']; ?>" alt="Card image">
                     </a>

@@ -171,9 +171,9 @@
                 <div>
                     <div class="d-flex">
                         <?php if ($this->session->userdata('profile_image') == 'defauft.png') { ?>
-                            <img class="img" src="/spaziatube/uploads/profile/defaut/<?= $this->session->userdata('profile_image') ?>" alt="Profile Image">
+                            <img class="img" src="<?= base_url("uploads/profile/defaut/". $this->session->userdata('profile_image'))  ?>" alt="Profile Image">
                         <?php } else { ?>
-                            <img class="profil_video" src="/spaziatube/uploads/profile/<?= $this->session->userdata('id') ?>/<?= $this->session->userdata('profile_image') ?>" alt="Profil User">
+                            <img class="profil_video" src="<?= base_url("uploads/profile/". $this->session->userdata('id'). "/" . $this->session->userdata('profile_image')) ?>" alt="Profil User">
                         <?php } ?>
                         <div class="box_commentaire w-100">
                             <textarea id="commentTextarea" class="form-control" name="commentTextarea" placeholder="Ajoutez un commentaire..." data-video-id="<?= $id_video ?>"></textarea>
@@ -198,9 +198,9 @@
                     <?php foreach ($commentaire_video as $commentaire) : ?>
                         <div class="d-flex">
                             <?php if ($commentaire['profile_image'] == 'defauft.png') { ?>
-                                <img class="img" src="/spaziatube/uploads/profile/defaut/<?= $commentaire['profile_image'] ?>" alt="Profile Image">
+                                <img class="img" src="<?= base_url("uploads/profile/defaut/".$commentaire['profile_image']) ?>" alt="Profile Image">
                             <?php } else { ?>
-                                <img class="profil_video" src="/spaziatube/uploads/profile/<?= $commentaire['id']; ?>/<?= $commentaire['profile_image']; ?>" alt="Profil User">
+                                <img class="profil_video" src="<?= base_url("uploads/profile/". $commentaire['id'] . "/" .$commentaire['profile_image']) ?>" alt="Profil User">
                             <?php } ?>
                             <div class="box_commentaire">
                                 <div class="d-flex">
@@ -268,7 +268,7 @@
                     <div class="row">
                         <div class="col-md-4">
                             <a href="<?= base_url('Media/video/' . $similar_videos['video_lien']); ?>" onclick="incrementViews(<?= $similar_videos['id_video'] ?>)">
-                                <img class="img_video_latera" src="/spaziatube/uploads/video/<?= $similar_videos['user_id']; ?>/bannier/<?= $similar_videos['video_bannier']; ?>" alt="Bannier video Lateral">
+                                <img class="img_video_latera" src="<?= base_url("uploads/video/".$similar_videos['user_id'] . "/bannier/" .$similar_videos['video_bannier']) ?>" alt="Bannier video Lateral">
                             </a>
                         </div>
                         <div class="col-md-6 p-0">
@@ -303,7 +303,7 @@
                 <div class="row">
                     <div class="col-md-4">
                         <a href="<?= base_url('Media/video/' . $random_videos['video_lien']); ?>" onclick="incrementViews(<?= $random_videos['id_video'] ?>)">
-                            <img class="img_video_latera" src="/spaziatube/uploads/video/<?= $random_videos['user_id']; ?>/bannier/<?= $random_videos['video_bannier']; ?>" alt="Bannier video Lateral">
+                            <img class="img_video_latera" src="<?= base_url("uploads/video/". $random_videos['user_id'] . "/bannier/". $random_videos['video_bannier']) ?>" alt="Bannier video Lateral">
                         </a>
                     </div>
                     <div class="col-md-6 p-0">

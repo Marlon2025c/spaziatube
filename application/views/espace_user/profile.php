@@ -14,9 +14,9 @@
             <div class="d-flex">
                 <div class="p-3">
                     <?php if ($this->session->userdata('profile_image') == 'defauft.png') { ?>
-                        <img class="img" src="/spaziatube/uploads/profile/defaut/<?= $this->session->userdata('profile_image') ?>" alt="Profile Image">
+                        <img class="img" src="/spaziatube/uploads/profile/defaut/<?= $user['profile_image'] ?>" alt="Profile Image">
                     <?php } else { ?>
-                        <img class="rounded-circle image-profile" src="/spaziatube/uploads/profile/<?= $this->session->userdata('id') ?>/<?= $this->session->userdata('profile_image') ?>" alt="Photo-Profile" style="width: 120px; height: 120px;" />
+                        <img class="rounded-circle image-profile" src="/spaziatube/uploads/profile/<?= $user['id'] ?>/<?= $user['profile_image'] ?>" alt="Photo-Profile" style="width: 120px; height: 120px;" />
                     <?php } ?>
                     <span></span>
                 </div>
@@ -24,27 +24,68 @@
                     <h2 style="font-size: 22;"><?= $user['pseudo']; ?></h2>
                     <p style="font-size: 13;">
                         <span>@<?= $user['role_name']; ?></span>
-                        <span><?= $subscriptionCount; ?> </span>Abonnés
+                        <span class="m-0 subscription-count"><?= $subscriptionCount ?> Abonnés</span>
                         <span>322 </span>Vidéos
 
                     </p>
                 </div>
             </div>
             <div class="p-5">
-                <?php if (IsConnected() == true) : ?>
-                    <?php if ($isSubscribed) : ?>
-
-                        <button class="button-profile button-profile-color-sd"><a href="<?= base_url('Social/subscription/' . $user['id']); ?>">Se désabonner</a></button>
-                    <?php else : ?>
-                        <?php if ($user['id'] != $loggedInUserId) : ?>
-                            <button class="button-profile button-profile-color-sd"><a href=" <?= base_url('Social/subscription/' . $user['id']); ?>">S'abonner</a></button>
-                        <?php else : ?>
-                            <button class="button-profile"><a href="<?= base_url("Social/Tableaudebord/");  ?>">Gérer les vidéos</a></button>
-                        <?php endif; ?>
-                    <?php endif; ?>
+            <?php if (IsConnected() == true) : ?>
+                <?php if ($isSubscribed) : ?>
+                    <div class="boxinfo_social">
+                        <div class="d-flex btnsocial boxinfo_social_pt">
+                            <a href="#" class="d-flex align-items-center unsubscribe-button" data-user-id="<?= $user['id'] ?>">
+                                <ion-icon name="person-remove-outline" class="dislike_ion"></ion-icon>
+                                Se désabonner
+                            </a>
+                        </div>
+                    </div>
+                    <div class="boxinfo_social">
+                        <div class="d-flex btnsocial boxinfo_social_pt">
+                            <a href="#" class="d-flex align-items-center subscribe-button d-none" data-user-id="<?= $user['id'] ?>">
+                                <ion-icon name="notifications-outline" class="dislike_ion"></ion-icon>
+                                S'abonner
+                            </a>
+                        </div>
+                    </div>
                 <?php else : ?>
-                    <button class="button-profile"><a href=" <?= base_url("Users/login/");  ?>">Connexion\Inscription</a></button>
+                    <?php if ($user['id'] != $loggedInUserId) : ?>
+                        <div class="boxinfo_social">
+                            <div class="d-flex btnsocial boxinfo_social_pt">
+                                <a href="#" class="d-flex align-items-center unsubscribe-button d-none" data-user-id="<?= $user['id'] ?>">
+                                    <ion-icon name="person-remove-outline" class="dislike_ion"></ion-icon>
+                                    Se désabonner
+                                </a>
+                            </div>
+                        </div>
+                        <div class="boxinfo_social">
+                            <div class="d-flex btnsocial boxinfo_social_pt">
+                                <a href="#" class="d-flex align-items-center subscribe-button" data-user-id="<?= $user['id'] ?>">
+                                    <ion-icon name="notifications-outline" class="dislike_ion"></ion-icon>
+                                    S'abonner
+                                </a>
+                            </div>
+                        </div>
+                    <?php else : ?>
+                        <div class="boxinfo_social">
+                            <div class="d-flex btnsocial boxinfo_social_pt">
+                                <a href="<?= base_url("Social/Tableaudebord/");  ?>" class="d-flex align-items-center">
+                                    Gérer les vidéos
+                                </a>
+                            </div>
+                        </div>
+                    <?php endif; ?>
                 <?php endif; ?>
+            <?php else : ?>
+                <div class="boxinfo_social">
+                    <div class="d-flex btnsocial boxinfo_social_pt">
+                        <a href="<?= base_url("Users/login/"); ?>" class="d-flex align-items-center">
+                            Connexion\Inscription
+                        </a>
+                    </div>
+                </div>
+            <?php endif; ?>
             </div>
         </div>
     </div>

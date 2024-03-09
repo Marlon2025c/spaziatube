@@ -36,7 +36,7 @@ class Social extends CI_Controller
                 $response = array(
                     'success' => true,
                     'newCommentCount' => $newCommentCount,
-                    'profile_image' => $this->session->userdata('profile_image'),
+                    'profile_image' =>  base_url("uploads/profile/").$this->session->userdata('id') ."/". $this->session->userdata('profile_image'),
                     'pseudo' => $this->session->userdata('pseudo'),
                     'time_ago' => timespan(strtotime($date_upload), time(), 1),
                     'commentaire' => nl2br($commentTextarea), // Utilisez le contenu du commentaire que vous avez ajouté
